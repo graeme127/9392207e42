@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700;900&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#2a2015; --muted:#6a5a45; --line:#e7dcc7;
@@ -120,29 +121,18 @@
   .sources li{margin:.5em 0;padding-left:16px;position:relative}
   .sources li::before{content:"›";position:absolute;left:0;color:var(--bark)}
 </style>
+<link href="avatar-pages.css?v=immersive3" rel="stylesheet">
 </head>
-<body>
+<body class="page-river">
 <header class="hero">
-  <img class="photo" alt="Pound Bend Tunnel on the Yarra River at Warrandyte"
-       src="https://commons.wikimedia.org/wiki/Special:FilePath/Pound%20Bend%20tunnel.JPG?width=1500"
-       onerror="this.style.display='none'">
-  <div class="overlay"></div>
-  <div class="htext">
-    <div class="tag">Place Overview</div>
-    <h1>Birrarung / Yarra River<br>at Warrandyte</h1>
-    <div class="sub">Wurundjeri Woi-wurrung Country · Victoria</div>
+  <div class="hero-media">
+    <img class="photo" alt="Pound Bend Tunnel on the Yarra River at Warrandyte"
+         src="https://commons.wikimedia.org/wiki/Special:FilePath/Pound%20Bend%20tunnel.JPG?width=1500"
+         onerror="this.style.display='none'">
   </div>
 </header>
 
-<main class="wrap">
-  <nav class="topic-nav" aria-label="Ecology profiles">
-    <a href="index.html">All profiles</a>
-    <a href="striped-marsh-frog.html">Striped marsh frog</a>
-    <a href="warrandyte-yarra-river.html" aria-current="page">Warrandyte river</a>
-    <a href="white-mangroves-sydney.html">Melbourne mangroves</a>
-  </nav>
-  <p class="lead">About 24 km north-east of central Melbourne, the Birrarung / Yarra River winds through steep slopes and remnant bushland at Warrandyte—a living Wurundjeri cultural landscape, an important wildlife corridor and the site of Victoria’s first officially recognised gold discovery.</p>
-
+<main class="page-shell">
   <section class="soundscape" aria-labelledby="soundscape-title">
     <h2 id="soundscape-title">Listen to the river corridor</h2>
     <p class="sound-intro">Hear three different field recordings: flowing water and two familiar Australian birds. The audio files are stored with this website and only play when you tap.</p>
@@ -154,6 +144,34 @@
     <p class="sound-status" id="sound-status" role="status" aria-live="polite">Choose a sound to begin.</p>
     <p class="sound-credit">Recordings: Fg2 (public domain); Kuco (public domain); skyflower2 / iNaturalist (CC BY-NC).</p>
   </section>
+
+  <section class="identity" aria-labelledby="avatar-name">
+    <p class="eyebrow">Place Overview</p>
+    <h1 class="avatar-name" id="avatar-name">Pound Bend / Birrarung</h1>
+    <p class="identity-note"><span>Birrarung / Yarra River</span><br><span>at Warrandyte</span><br>Wurundjeri Woi-wurrung Country · Victoria</p>
+  </section>
+
+  <section class="mood-card" data-mode="good" aria-labelledby="mood-title">
+    <h2 id="mood-title">Today, through my eyes</h2>
+    <div class="mood-switch" role="group" aria-label="Choose a good day or a bad day">
+      <button class="mood-button" type="button" data-mood="good" aria-pressed="true"><span class="weather-icon" aria-hidden="true">☀</span>Good day</button>
+      <button class="mood-button" type="button" data-mood="bad" aria-pressed="false"><span class="weather-icon" aria-hidden="true">☁</span>Bad day</button>
+    </div>
+    <div class="mood-copy" aria-live="polite">
+      <p data-mood-copy="good">A flood comes through so big it rushes through the tunnel and floods my old bend at the same time, water pouring through both paths, loud and fast and everywhere at once. For one hour, I'm not choosing between my two selves, I'm both of them, wild and alive and free.</p>
+      <p data-mood-copy="bad" hidden>Someone swims into the tunnel and gets the current wrong. It's happened before. People have died in there. I remember every one of them.</p>
+    </div>
+  </section>
+
+  <aside class="did-you-know" aria-label="Did you know">
+    <span class="label">Did you know?</span>
+    <p>A 145 m tunnel cuts across Pound Bend. It once helped expose about five kilometres of riverbed for gold mining.</p>
+  </aside>
+
+  <details class="science">
+    <summary>See the science</summary>
+    <div class="science-content">
+      <p class="lead">About 24 km north-east of central Melbourne, the Birrarung / Yarra River winds through steep slopes and remnant bushland at Warrandyte—a living Wurundjeri cultural landscape, an important wildlife corridor and the site of Victoria’s first officially recognised gold discovery.</p>
 
   <div class="cards">
     <div class="card"><div class="n">680 ha</div><div class="l">State park network</div></div>
@@ -179,24 +197,15 @@
   <figure>
     <svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" aria-label="Map diagram of the Pound Bend river loop and diversion tunnel" style="background:#fff">
       <defs>
-        <linearGradient id="pbLand" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#dfead0"/><stop offset="1" stop-color="#cbdcb4"/>
-        </linearGradient>
-        <linearGradient id="pbPaper" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#f7f3e8"/><stop offset="1" stop-color="#efe9d9"/>
-        </linearGradient>
-        <filter id="pbSoft" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#2f5561" flood-opacity=".22"/>
-        </filter>
         <marker id="pbArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
           <path d="M0 0 L10 5 L0 10 z" fill="#256270"/>
         </marker>
       </defs>
 
-      <rect x="4" y="4" width="632" height="412" rx="20" fill="url(#pbPaper)"/>
+      <rect x="4" y="4" width="632" height="412" fill="#f3efe6"/>
 
       <!-- land inside the loop -->
-      <ellipse cx="388" cy="258" rx="150" ry="98" fill="url(#pbLand)"/>
+      <ellipse cx="388" cy="258" rx="150" ry="98" fill="#dfe8c8"/>
       <!-- faint contour + trees on the land -->
       <ellipse cx="388" cy="258" rx="110" ry="66" fill="none" stroke="#b7ca9c" stroke-width="1.4" opacity=".6"/>
       <g fill="#8fae6f" opacity=".8">
@@ -206,13 +215,13 @@
 
       <!-- the natural river loop (~5 km) -->
       <path d="M190 150 C365 92 552 122 566 240 C578 352 398 388 292 380 C230 375 205 306 190 236"
-            fill="none" stroke="#2f7581" stroke-width="20" stroke-linecap="round" filter="url(#pbSoft)"/>
+            fill="none" stroke="#2f7581" stroke-width="20" stroke-linecap="round"/>
       <path d="M190 150 C365 92 552 122 566 240 C578 352 398 388 292 380 C230 375 205 306 190 236"
             fill="none" stroke="#8fc6cd" stroke-width="6" stroke-linecap="round" opacity=".5"/>
 
       <!-- entry & exit stubs on the left -->
-      <path d="M48 150 L190 150" stroke="#2f7581" stroke-width="20" stroke-linecap="round" filter="url(#pbSoft)"/>
-      <path d="M190 236 L60 268" stroke="#2f7581" stroke-width="20" stroke-linecap="round" filter="url(#pbSoft)"/>
+      <path d="M48 150 L190 150" stroke="#2f7581" stroke-width="20" stroke-linecap="round"/>
+      <path d="M190 236 L60 268" stroke="#2f7581" stroke-width="20" stroke-linecap="round"/>
       <path d="M48 150 L190 150" stroke="#8fc6cd" stroke-width="6" stroke-linecap="round" opacity=".5"/>
       <path d="M190 236 L60 268" stroke="#8fc6cd" stroke-width="6" stroke-linecap="round" opacity=".5"/>
 
@@ -234,7 +243,7 @@
         <text x="52" y="300" font-size="13" fill="#256270" font-weight="700">Yarra out</text>
 
         <!-- tunnel callout -->
-        <rect x="196" y="176" width="150" height="40" rx="10" fill="#fff" stroke="#e6d3ad" filter="url(#pbSoft)"/>
+        <rect x="196" y="176" width="150" height="40" fill="#fff"/>
         <text x="271" y="193" text-anchor="middle" font-size="13" fill="#96612e" font-weight="700">145 m tunnel</text>
         <text x="271" y="209" text-anchor="middle" font-size="11.5" fill="#96612e">short-cut across the neck</text>
         <line x1="196" y1="196" x2="190" y2="193" stroke="#c58a24" stroke-width="1.4"/>
@@ -244,7 +253,7 @@
 
       <!-- north arrow -->
       <g transform="translate(596,58)">
-        <circle r="20" fill="#fff" stroke="#d9cdb2" filter="url(#pbSoft)"/>
+        <circle r="20" fill="#fff"/>
         <path d="M0 -13 L6 6 L0 1 L-6 6 Z" fill="#96612e"/>
         <text x="0" y="17" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#6a5a45">N</text>
       </g>
@@ -296,6 +305,18 @@
       <li><a href="https://vhd.heritagecouncil.vic.gov.au/places/4985">Pound Bend Gold Diversion Tunnel — Victorian Heritage Database</a></li>
     </ul>
   </div>
+    </div>
+  </details>
+
+  <nav class="topic-nav" aria-label="Ecology profiles">
+    <a href="index.html">All profiles</a>
+    <a href="striped-marsh-frog.html">Striped marsh frog</a>
+    <a href="warrandyte-yarra-river.html" aria-current="page">Warrandyte river</a>
+    <a href="white-mangroves-sydney.html">Melbourne mangroves</a>
+  </nav>
+
+  <button class="share-button" type="button">Share this page</button>
+  <p class="share-status" role="status" aria-live="polite"></p>
 </main>
 <script>
   (function () {
@@ -362,5 +383,6 @@
     });
   }());
 </script>
+<script src="avatar-page.js?v=immersive1"></script>
 </body>
 </html>

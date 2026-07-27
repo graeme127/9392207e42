@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700;900&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1d2413; --muted:#55603f; --line:#e2e6d3;
@@ -124,29 +125,18 @@
   .sources li{margin:.5em 0;padding-left:16px;position:relative}
   .sources li::before{content:"›";position:absolute;left:0;color:var(--moss)}
 </style>
+<link href="avatar-pages.css?v=immersive3" rel="stylesheet">
 </head>
-<body>
+<body class="page-frog">
 <header class="hero">
-  <img class="photo" alt="Striped marsh frog"
-       src="https://commons.wikimedia.org/wiki/Special:FilePath/Striped%20Marsh%20Frog,%20Limnodynastes%20peronii%20-%20Flickr%20-%20GregTheBusker.jpg?width=1500"
-       onerror="this.style.display='none'">
-  <div class="overlay"></div>
-  <div class="htext">
-    <div class="tag">Ecological Overview</div>
-    <h1>Striped Marsh Frog</h1>
-    <div class="sci">Limnodynastes peronii</div>
+  <div class="hero-media">
+    <img class="photo" alt="Striped marsh frog"
+         src="https://commons.wikimedia.org/wiki/Special:FilePath/Striped%20Marsh%20Frog,%20Limnodynastes%20peronii%20-%20Flickr%20-%20GregTheBusker.jpg?width=1500"
+         onerror="this.style.display='none'">
   </div>
 </header>
 
-<main class="wrap">
-  <nav class="topic-nav" aria-label="Ecology profiles">
-    <a href="index.html">All profiles</a>
-    <a href="striped-marsh-frog.html" aria-current="page">Striped marsh frog</a>
-    <a href="warrandyte-yarra-river.html">Warrandyte river</a>
-    <a href="white-mangroves-sydney.html">Melbourne mangroves</a>
-  </nav>
-  <p class="lead">A familiar frog of eastern Australia, recognised by dark stripes and a repeated single <em>“tok”</em>. It often persists in urban ponds, wetlands and drains, but its adaptability does not mean those habitats are healthy for frogs generally.</p>
-
+<main class="page-shell">
   <section class="soundscape" aria-labelledby="soundscape-title">
     <h2 id="soundscape-title">Listen to the wetland</h2>
     <p class="sound-intro">Hear real field recordings, including an actual striped marsh frog. The audio files are stored with this website and only play when you tap a button.</p>
@@ -158,6 +148,34 @@
     <p class="sound-status" id="sound-status" role="status" aria-live="polite">Choose a sound to begin.</p>
     <p class="sound-credit">Recordings: eli_hadwen / iNaturalist (CC BY-NC 4.0); ジダネ (public domain); Cory (CC BY 2.1 JP).</p>
   </section>
+
+  <section class="identity" aria-labelledby="avatar-name">
+    <p class="eyebrow">Ecological Overview</p>
+    <h1 class="avatar-name" id="avatar-name">Striped Marsh Frog</h1>
+    <p class="identity-note"><em>Limnodynastes peronii</em></p>
+  </section>
+
+  <section class="mood-card" data-mode="good" aria-labelledby="mood-title">
+    <h2 id="mood-title">Today, through my eyes</h2>
+    <div class="mood-switch" role="group" aria-label="Choose a good day or a bad day">
+      <button class="mood-button" type="button" data-mood="good" aria-pressed="true"><span class="weather-icon" aria-hidden="true">☀</span>Good day</button>
+      <button class="mood-button" type="button" data-mood="bad" aria-pressed="false"><span class="weather-icon" aria-hidden="true">☁</span>Bad day</button>
+    </div>
+    <div class="mood-copy" aria-live="polite">
+      <p data-mood-copy="good">It rains, finally, and I could sing all night. Tok. Tok. Tok. Every frog for a mile joins in, until the whole wetland is one big noisy party. Somewhere out there, a female is listening, so I must put on the performance of my life.</p>
+      <p data-mood-copy="bad" hidden>The rain doesn't come. My pond shrinks to a puddle, then a cracked patch of mud, then nothing. I used to call out every night and hear my friends calling back from every direction. Now there's nowhere left to call from, and no one left to answer. I wait, alone, in the quiet, hoping the rain remembers where I am.</p>
+    </div>
+  </section>
+
+  <aside class="did-you-know" aria-label="Did you know">
+    <span class="label">Did you know?</span>
+    <p>A striped marsh frog tadpole can grow to 9.5 cm and take seven or eight months to become a frog.</p>
+  </aside>
+
+  <details class="science">
+    <summary>See the science</summary>
+    <div class="science-content">
+      <p class="lead">A familiar frog of eastern Australia, recognised by dark stripes and a repeated single <em>“tok”</em>. It often persists in urban ponds, wetlands and drains, but its adaptability does not mean those habitats are healthy for frogs generally.</p>
 
   <div class="cards">
     <div class="card"><div class="n">75 mm</div><div class="l">Maximum body length</div></div>
@@ -217,6 +235,18 @@
       <li><a href="https://www.frogid.net.au/">FrogID — Australian Museum</a></li>
     </ul>
   </div>
+    </div>
+  </details>
+
+  <nav class="topic-nav" aria-label="Ecology profiles">
+    <a href="index.html">All profiles</a>
+    <a href="striped-marsh-frog.html" aria-current="page">Striped marsh frog</a>
+    <a href="warrandyte-yarra-river.html">Warrandyte river</a>
+    <a href="white-mangroves-sydney.html">Melbourne mangroves</a>
+  </nav>
+
+  <button class="share-button" type="button">Share this page</button>
+  <p class="share-status" role="status" aria-live="polite"></p>
 </main>
 <script>
   (function () {
@@ -283,5 +313,6 @@
     });
   }());
 </script>
+<script src="avatar-page.js?v=immersive1"></script>
 </body>
 </html>

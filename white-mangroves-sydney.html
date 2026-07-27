@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700;900&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#13251d; --muted:#4a5f56; --line:#dbe7de;
@@ -139,30 +140,18 @@
   .sources li{margin:.5em 0;padding-left:16px;position:relative}
   .sources li::before{content:"›";position:absolute;left:0;color:var(--moss)}
 </style>
+<link href="avatar-pages.css?v=immersive3" rel="stylesheet">
 </head>
-<body>
+<body class="page-mangrove">
 <header class="hero">
-  <img class="photo" alt="Avicennia marina subsp. australasica mangroves in a temperate estuary"
-       src="https://commons.wikimedia.org/wiki/Special:FilePath/Avicennia%20marina%20Mangrove%20Paihia%201.JPG?width=1600"
-       onerror="this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Grey%20mangroves%20Avicennia%20marina%20at%20Umm%20Al%20Quwain%20Mangrove%20Park.jpg?width=1600'">
-  <div class="overlay"></div>
-  <div class="htext">
-    <div class="tag">Ecological Overview</div>
-    <h1>Grey (or White) Mangroves around Melbourne</h1>
-    <div class="sci">Avicennia marina subsp. australasica</div>
+  <div class="hero-media">
+    <img class="photo" alt="Avicennia marina subsp. australasica mangroves in a temperate estuary"
+         src="https://commons.wikimedia.org/wiki/Special:FilePath/Avicennia%20marina%20Mangrove%20Paihia%201.JPG?width=1600"
+         onerror="this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Grey%20mangroves%20Avicennia%20marina%20at%20Umm%20Al%20Quwain%20Mangrove%20Park.jpg?width=1600'">
   </div>
-  <div class="credit">Avicennia marina subsp. australasica — Victoria’s only mangrove. Representative photo: Wikimedia Commons (CC)</div>
 </header>
 
-<main class="wrap">
-  <nav class="topic-nav" aria-label="Ecology profiles">
-    <a href="index.html">All profiles</a>
-    <a href="striped-marsh-frog.html">Striped marsh frog</a>
-    <a href="warrandyte-yarra-river.html">Warrandyte river</a>
-    <a href="white-mangroves-sydney.html" aria-current="page">Melbourne mangroves</a>
-  </nav>
-  <p class="lead">Melbourne’s “white mangrove” is the tree also called the grey mangrove. Around Port Phillip and Western Port, its roots connect sheltered tidal mud, coastal water and a rich food web.</p>
-
+<main class="page-shell">
   <section class="soundscape" aria-labelledby="soundscape-title">
     <h2 id="soundscape-title">Listen to the habitat</h2>
     <p class="sound-intro">Hear a real shoreline and two named Australian coastal birds. The audio files are stored with this website and only play when you tap a button.</p>
@@ -174,6 +163,36 @@
     <p class="sound-status" id="sound-status" role="status" aria-live="polite">Choose a sound to begin.</p>
     <p class="sound-credit">Recordings: earthcalling (public domain); Sue Tardif / iNaturalist (CC BY-NC); smathichong / iNaturalist (CC BY).</p>
   </section>
+
+  <p class="hero-credit">Avicennia marina subsp. australasica — Victoria’s only mangrove. Representative photo: Wikimedia Commons (CC)</p>
+
+  <section class="identity" aria-labelledby="avatar-name">
+    <p class="eyebrow">Ecological Overview</p>
+    <h1 class="avatar-name" id="avatar-name">White Mangrove</h1>
+    <p class="identity-note">Grey (or White) Mangroves around Melbourne<br><em>Avicennia marina subsp. australasica</em></p>
+  </section>
+
+  <section class="mood-card" data-mode="good" aria-labelledby="mood-title">
+    <h2 id="mood-title">Today, through my eyes</h2>
+    <div class="mood-switch" role="group" aria-label="Choose a good day or a bad day">
+      <button class="mood-button" type="button" data-mood="good" aria-pressed="true"><span class="weather-icon" aria-hidden="true">☀</span>Good day</button>
+      <button class="mood-button" type="button" data-mood="bad" aria-pressed="false"><span class="weather-icon" aria-hidden="true">☁</span>Bad day</button>
+    </div>
+    <div class="mood-copy" aria-live="polite">
+      <p data-mood-copy="good">Baby fish hide between my roots where nothing bigger can reach them. A heron stands so still on my branch I forget it's there. The tide comes in like it's greeting an old friend. I have stood here for years. I will stand here for many more.</p>
+      <p data-mood-copy="bad" hidden>One day the water reaching me is full of chemicals, from a spill somewhere upstream. It burns the roots that breathe for me, and they stop working, one after another. I'm rooted to this spot, I can't move and I have no voice. I can't warn the fish hiding in the mud beside me, or the birds who eat them, or the people further downstream, who won't know there was a spill until the fish start dying too.</p>
+    </div>
+  </section>
+
+  <aside class="did-you-know" aria-label="Did you know">
+    <span class="label">Did you know?</span>
+    <p>Victoria has only one native mangrove species. Its pencil roots rise from the mud like snorkels, helping the buried roots breathe.</p>
+  </aside>
+
+  <details class="science">
+    <summary>See the science</summary>
+    <div class="science-content">
+      <p class="lead">Melbourne’s “white mangrove” is the tree also called the grey mangrove. Around Port Phillip and Western Port, its roots connect sheltered tidal mud, coastal water and a rich food web.</p>
 
   <h2>One Victorian mangrove, two names</h2>
   <p>Both names describe the same species, <em>Avicennia marina</em>. The accepted name for the Victorian subspecies is <strong><em>Avicennia marina</em> subsp. <em>australasica</em></strong>; the older “var. <em>australasica</em>” still appears in some reports and field guides. Its bark is grey, and the leaf undersides are covered with fine grey-white hairs. Salt secreted through the leaves can add a crystalline coating. The tree belongs to the family Acanthaceae.</p>
@@ -261,6 +280,18 @@
       <li><a href="https://www.environment.vic.gov.au/natural-environment-adaptation-action-plan/climate-change-impacts">Climate-change impacts on coastal habitats — Victorian Government</a></li>
     </ul>
   </div>
+    </div>
+  </details>
+
+  <nav class="topic-nav" aria-label="Ecology profiles">
+    <a href="index.html">All profiles</a>
+    <a href="striped-marsh-frog.html">Striped marsh frog</a>
+    <a href="warrandyte-yarra-river.html">Warrandyte river</a>
+    <a href="white-mangroves-sydney.html" aria-current="page">Melbourne mangroves</a>
+  </nav>
+
+  <button class="share-button" type="button">Share this page</button>
+  <p class="share-status" role="status" aria-live="polite"></p>
 </main>
 <script>
   (function () {
@@ -327,5 +358,6 @@
     });
   }());
 </script>
+<script src="avatar-page.js?v=immersive1"></script>
 </body>
 </html>
