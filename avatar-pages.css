@@ -38,7 +38,7 @@ a{color:inherit}
   position:relative;
   width:100%;
   min-height:0!important;
-  height:clamp(330px,70svh,660px);
+  height:clamp(300px,54svh,560px);
   padding:0!important;
   overflow:hidden;
   background:#d7d2c8!important;
@@ -47,6 +47,7 @@ a{color:inherit}
 }
 .hero-media{position:absolute;inset:-4%;z-index:1;opacity:.72;transition:opacity .8s ease}
 .hero.is-visible .hero-media{opacity:1}
+.hero-media picture{display:block;width:100%;height:100%}
 .hero .photo{
   position:absolute;
   inset:0;
@@ -60,15 +61,32 @@ a{color:inherit}
   z-index:auto!important;
 }
 .hero .overlay,.hero .htext,.hero .credit{display:none!important}
+.top-home-link{
+  position:absolute;
+  z-index:3;
+  top:max(14px,env(safe-area-inset-top));
+  left:14px;
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:1.65rem;
+  line-height:1;
+  text-decoration:none;
+}
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 
-.page-shell{width:min(100%,760px);margin:0 auto;padding:0 18px 64px}
+.page-shell{width:min(100%,760px);margin:0 auto;padding:0 18px 64px;display:flex;flex-direction:column}
 
 /* Audio is the first text and interaction on every page. */
 .soundscape{
   position:relative;
   z-index:2;
   margin:-34px 0 0!important;
-  padding:22px 18px 18px!important;
+  order:-2;
+  padding:18px 16px 15px!important;
   background:#23231f!important;
   background-image:none!important;
   color:#fff!important;
@@ -86,10 +104,10 @@ a{color:inherit}
   letter-spacing:.01em!important;
 }
 .soundscape h2::before{display:none!important}
-.sound-intro{margin:0 0 14px!important;color:#fff!important;font-size:1rem!important;line-height:1.4!important}
+.sound-intro{margin:0 0 12px!important;color:#fff!important;font-size:.96rem!important;line-height:1.35!important}
 .sound-buttons{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}
 .sound-btn{
-  min-height:92px!important;
+  min-height:84px!important;
   padding:12px 7px!important;
   display:flex;
   flex-direction:column;
@@ -113,9 +131,15 @@ a{color:inherit}
 .sound-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .sound-status{min-height:1.5em;margin:12px 0 0!important;color:#fff!important;font-size:.9rem!important;line-height:1.35!important}
 .sound-credit{margin:7px 0 0!important;color:#fff!important;font-size:.78rem!important;line-height:1.35!important;opacity:.82}
+.sound-credit-details{margin-top:4px;color:#fff}
+.sound-credit-details>summary{min-height:44px;display:flex;align-items:center;gap:7px;width:max-content;max-width:100%;cursor:pointer;color:#fff;font-size:.82rem;font-weight:900;list-style:none;text-decoration:underline;text-underline-offset:3px}
+.sound-credit-details>summary::-webkit-details-marker{display:none}
+.sound-credit-details>summary::after{content:'+';font-size:1.1rem;text-decoration:none}
+.sound-credit-details[open]>summary::after{content:'−'}
+.soundscape :focus-visible{outline-color:#fff}
 
-.hero-credit{margin:10px 2px 0;color:var(--ink-soft);font-size:.78rem;line-height:1.35}
-.identity{padding:36px 0 26px}
+.hero-credit{order:-1;margin:10px 2px 0;color:var(--ink-soft);font-size:.78rem;line-height:1.35}
+.identity{padding:30px 0 24px}
 .eyebrow{margin:0 0 10px;color:var(--ink-soft);font-size:.86rem;letter-spacing:.11em;text-transform:uppercase}
 .avatar-name{
   margin:0;
@@ -157,10 +181,12 @@ a{color:inherit}
   transition:background-color .2s ease,color .2s ease,transform .2s ease;
 }
 .mood-button:hover{transform:translateY(-2px)}
-.mood-button[aria-pressed="true"]{background:var(--accent);color:var(--accent-on)}
+.mood-button[aria-pressed="true"]{background:var(--accent);color:var(--accent-on);outline:3px solid currentColor;outline-offset:-4px}
+.mood-button[aria-pressed="true"]::after{content:'✓';font-size:.9rem}
+.mood-card[data-mode="bad"] .mood-button{background:#4a4b46;color:#fff}
 .mood-card[data-mode="bad"] .mood-button[aria-pressed="true"]{background:#fff;color:#1d1d1a}
 .weather-icon{font-size:1.7rem;line-height:1}
-.mood-copy{min-height:13.5em;display:flex;align-items:center}
+.mood-copy{display:block}
 .mood-copy p{margin:0;font-size:clamp(1.22rem,5.2vw,1.65rem);font-weight:900;line-height:1.25;animation:mood-in .32s ease both}
 @keyframes mood-in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
 
@@ -197,9 +223,11 @@ a{color:inherit}
 .science-content h2:first-of-type{margin-top:1.3em!important}
 .science-content h2::before{display:none!important}
 .science-content h3{margin:1.5em 0 .35em!important;color:var(--accent)!important;font-size:1.3rem!important}
-.science-content p,.science-content li,.science-content td,.science-content th{font-family:'Archivo Narrow','Arial Narrow',Arial,sans-serif!important;font-weight:700!important}
+.science-content p,.science-content li,.science-content td{font-family:'Archivo Narrow','Arial Narrow',Arial,sans-serif!important;font-weight:500!important;line-height:1.62!important}
+.science-content th{font-family:'Archivo Narrow','Arial Narrow',Arial,sans-serif!important;font-weight:700!important;line-height:1.45!important}
 .science-content p{margin:.8em 0}
-.science-content .lead{margin:0 0 1.8em!important;color:var(--ink)!important;font-size:1.24rem!important;line-height:1.4!important;font-weight:900!important}
+.science-content>p,.science-content>h2,.science-content>h3{max-width:64ch}
+.science-content .lead{margin:0 0 1.8em!important;color:var(--ink)!important;font-size:1.24rem!important;line-height:1.48!important;font-weight:700!important}
 .science-content .lead::first-letter{initial-letter:unset!important;-webkit-initial-letter:unset!important;color:inherit!important;margin:0!important}
 .cards{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin:24px 0!important}
 .card{padding:18px 12px!important;background:var(--accent-soft)!important;border:0!important;border-radius:0!important;box-shadow:none!important;text-align:left!important;transition:none!important}
@@ -227,6 +255,8 @@ td{background:var(--paper)!important}
 .sources li{margin:.75em 0!important;padding:0!important}
 .sources li::before{display:none!important}
 .sources a{color:var(--ink)!important;text-decoration:underline!important;text-decoration-color:var(--accent)!important;text-decoration-thickness:2px!important;text-underline-offset:3px!important}
+.science-close{width:100%;min-height:54px;margin:28px 0 8px;padding:13px 18px;background:var(--paper);color:var(--accent);font-weight:900;cursor:pointer}
+.science-close:hover{background:var(--accent-soft)}
 
 .topic-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px!important;margin:0 0 20px!important;font-size:.92rem!important}
 .topic-nav a{min-height:50px;padding:10px!important;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--accent-soft)!important;color:var(--ink)!important;border:0!important;border-radius:0!important;box-shadow:none!important;text-decoration:none!important}
@@ -238,10 +268,9 @@ td{background:var(--paper)!important}
 @media(min-width:720px){
   .page-shell{padding-left:28px;padding-right:28px}
   .soundscape{margin-top:-42px!important;padding:26px!important}
-  .identity{padding:46px 0 34px}
+  .identity{padding:38px 0 30px}
   .page-river .identity{margin-left:-28px;margin-right:-28px;padding-left:28px;padding-right:28px}
   .mood-card{margin-left:0;margin-right:0;padding:34px}
-  .mood-copy{min-height:9.5em}
   .did-you-know{padding:30px}
   .topic-nav{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
@@ -249,10 +278,9 @@ td{background:var(--paper)!important}
 @media(max-width:390px){
   .page-shell{padding-left:14px;padding-right:14px}
   .soundscape{margin-left:0!important;margin-right:0!important;padding:18px 12px!important}
-  .sound-btn{min-height:96px!important;font-size:.82rem!important}
+  .sound-btn{min-height:84px!important;font-size:.82rem!important}
   .mood-card{margin-left:-14px;margin-right:-14px;padding-left:14px;padding-right:14px}
   .page-river .identity{margin-left:-14px;margin-right:-14px;padding-left:14px;padding-right:14px}
-  .mood-copy{min-height:16em}
   th,td{padding:11px 9px!important}
 }
 

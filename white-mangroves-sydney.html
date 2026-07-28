@@ -7,151 +7,29 @@
 <title>Grey (or White) Mangroves around Melbourne</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700;900&amp;display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#13251d; --muted:#4a5f56; --line:#dbe7de;
-    --moss:#2f6d4f; --moss-dark:#173a2a; --sea:#2f7f8f; --sand:#e9e3d3;
-    --leaf:#5a9367; --paper:#f7faf6; --accent:#d08a3e;
-    --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--paper);color:var(--ink);
-    font-family:var(--serif);line-height:1.7;font-size:18px;
-    -webkit-font-smoothing:antialiased}
-  .wrap{max-width:880px;margin:0 auto;padding:0 24px 96px}
-  .topic-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:24px 0 12px;
-    font-family:var(--sans);font-size:.78rem}
-  .topic-nav a{color:var(--moss-dark);background:#fff;border:1px solid var(--line);border-radius:999px;
-    padding:7px 12px;text-decoration:none;box-shadow:0 3px 10px rgba(23,58,42,.05)}
-  .topic-nav a:hover{border-color:var(--moss);color:var(--sea)}
-  .topic-nav a[aria-current="page"]{background:var(--moss-dark);border-color:var(--moss-dark);color:#fff}
-
-  /* ---------- HERO ---------- */
-  header.hero{position:relative;color:#eef7ef;text-align:center;
-    padding:0 20px 46px;overflow:hidden;min-height:560px;
-    background:linear-gradient(160deg,#1c4634,#2f6d4f 55%,#4e8f8b);
-    display:flex;flex-direction:column;justify-content:flex-end}
-  .hero .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  .hero .overlay{position:absolute;inset:0;z-index:1;
-    background:linear-gradient(180deg,rgba(12,40,28,.34) 0%,rgba(12,40,28,.12) 42%,rgba(12,40,28,.72) 100%)}
-  .hero .htext{position:relative;z-index:2}
-  .hero .credit{position:absolute;right:14px;bottom:10px;z-index:2;
-    font-family:var(--sans);font-size:.66rem;letter-spacing:.3px;opacity:.72}
-  figure.photo-fig{margin:36px 0}
-  figure.photo-fig img{width:100%;height:auto;border-radius:18px;display:block;
-    box-shadow:0 10px 34px rgba(23,58,42,.16)}
-  .hero .tag{display:inline-block;font-family:var(--sans);
-    font-size:.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:600;
-    background:rgba(255,255,255,.16);backdrop-filter:blur(3px);
-    padding:7px 16px;border-radius:30px;border:1px solid rgba(255,255,255,.25)}
-  .hero h1{font-family:var(--serif);font-weight:600;
-    font-size:clamp(2.2rem,6vw,3.4rem);margin:.35em 0 .1em;
-    letter-spacing:-.5px;text-shadow:0 2px 24px rgba(0,30,20,.35)}
-  .hero .sci{font-style:italic;opacity:.95;font-size:1.2rem;font-weight:400}
-
-  /* ---------- TYPE ---------- */
-  h2{font-family:var(--serif);font-weight:600;font-size:1.7rem;color:var(--moss-dark);
-    margin:2.6em 0 .4em;letter-spacing:-.3px;position:relative;padding-left:20px}
-  h2::before{content:"";position:absolute;left:0;top:.18em;bottom:.18em;width:5px;
-    border-radius:4px;background:linear-gradient(var(--moss),var(--sea))}
-  h3{font-family:var(--sans);font-weight:600;color:var(--sea);font-size:1.08rem;
-    margin:1.6em 0 .2em;letter-spacing:.2px}
-  p{margin:.75em 0}
-  .lead{font-size:1.28rem;line-height:1.6;color:var(--moss-dark);font-weight:400;
-    margin-top:2em}
-  .lead::first-letter{initial-letter:2;-webkit-initial-letter:2;
-    font-weight:600;color:var(--moss);margin-right:10px}
-  strong{color:var(--moss-dark)}
-  em{color:inherit}
-
-  /* ---------- STAT CARDS ---------- */
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:16px;margin:34px 0}
-  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;
-    box-shadow:0 6px 20px rgba(23,58,42,.06);transition:transform .2s,box-shadow .2s;
-    text-align:center}
-  .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(23,58,42,.12)}
-  .card .n{font-family:var(--serif);font-weight:700;color:var(--moss);font-size:1.9rem;line-height:1}
-  .card .l{font-family:var(--sans);font-size:.74rem;text-transform:uppercase;
-    letter-spacing:1.2px;color:var(--muted);margin-top:8px}
-
-  figure{margin:36px 0;text-align:center}
-  figure svg{width:100%;height:auto;border-radius:18px;
-    box-shadow:0 10px 34px rgba(23,58,42,.12)}
-  figcaption{font-family:var(--sans);font-size:.86rem;color:var(--muted);
-    margin-top:14px;max-width:620px;margin-left:auto;margin-right:auto}
-
-  .callout{position:relative;background:linear-gradient(135deg,#eef6ef,#e2f0ea);
-    border:1px solid var(--line);border-left:5px solid var(--moss);
-    padding:20px 24px;border-radius:0 16px 16px 0;margin:30px 0;
-    box-shadow:0 6px 18px rgba(23,58,42,.06)}
-  .callout .k{font-family:var(--sans);font-weight:700;color:var(--moss);
-    text-transform:uppercase;letter-spacing:1.5px;font-size:.72rem;display:block;margin-bottom:4px}
-
-  /* ---------- SELF-CONTAINED SOUNDS ---------- */
-  .soundscape{margin:34px 0;padding:26px;border-radius:20px;color:#f4fbf5;
-    background:linear-gradient(135deg,var(--moss-dark),#245d48 58%,#2f7180);
-    box-shadow:0 12px 30px rgba(23,58,42,.18)}
-  .soundscape h2{color:#fff;margin:0 0 6px;padding-left:0}
-  .soundscape h2::before{display:none}
-  .soundscape .sound-intro{margin:.25em 0 18px;color:#deeee4;
-    font-family:var(--sans);font-size:.88rem;line-height:1.55}
-  .sound-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-  .sound-btn{appearance:none;border:1px solid rgba(255,255,255,.34);border-radius:14px;
-    min-height:88px;padding:15px 10px;background:rgba(255,255,255,.1);color:#fff;cursor:pointer;
-    font-family:var(--sans);font-size:.86rem;font-weight:600;line-height:1.3;
-    touch-action:manipulation;-webkit-tap-highlight-color:transparent;
-    transition:transform .18s,background .18s,border-color .18s}
-  .sound-btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.18)}
-  .sound-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
-  .sound-btn[aria-pressed="true"]{background:#fff;color:var(--moss-dark);border-color:#fff}
-  .sound-icon{display:flex;align-items:center;justify-content:center;width:32px;height:32px;margin:0 auto 8px}
-  .sound-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;
-    stroke-linecap:round;stroke-linejoin:round}
-  .sound-status{min-height:1.4em;margin:14px 0 0!important;color:#deeee4;
-    font-family:var(--sans);font-size:.78rem!important;line-height:1.45}
-  .sound-credit{margin:8px 0 0!important;color:#d2e7da;font-family:var(--sans);
-    font-size:.68rem!important;line-height:1.5;opacity:.9}
-  @media(max-width:600px){.sound-buttons{grid-template-columns:1fr}.sound-btn{min-height:78px;padding:12px}}
-  @media(prefers-reduced-motion:reduce){.sound-btn{transition:none}.sound-btn:hover{transform:none}}
-
-  ul.rich{list-style:none;padding:0;margin:18px 0}
-  ul.rich li{position:relative;padding:10px 0 10px 34px;border-bottom:1px dashed var(--line)}
-  ul.rich li::before{content:"";position:absolute;left:6px;top:19px;width:10px;height:10px;
-    border-radius:50%;background:var(--leaf);box-shadow:0 0 0 4px rgba(90,147,103,.18)}
-
-  table{width:100%;border-collapse:separate;border-spacing:0;margin:24px 0;font-size:.98rem;
-    background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
-    box-shadow:0 6px 20px rgba(23,58,42,.06)}
-  th,td{text-align:left;padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:top}
-  tr:last-child th,tr:last-child td{border-bottom:none}
-  th{width:36%;color:var(--moss-dark);font-family:var(--sans);font-weight:600;
-    font-size:.82rem;text-transform:uppercase;letter-spacing:.5px;background:#f3f8f4}
-
-  .sources{font-family:var(--sans);font-size:.86rem;background:#eef3ee;
-    border-radius:16px;padding:22px 26px;margin-top:52px;border:1px solid var(--line)}
-  .sources strong{font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--moss-dark)}
-  .sources ul{list-style:none;padding:0;margin:12px 0 0}
-  .sources a{color:var(--sea);text-decoration:none;word-break:break-word}
-  .sources a:hover{text-decoration:underline}
-  .sources li{margin:.5em 0;padding-left:16px;position:relative}
-  .sources li::before{content:"›";position:absolute;left:0;color:var(--moss)}
-</style>
-<link href="avatar-pages.css?v=immersive3" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700;900&amp;display=swap" rel="stylesheet">
+<link href="avatar-pages.css?v=immersive4" rel="stylesheet">
 </head>
 <body class="page-mangrove">
 <header class="hero">
+  <a class="top-home-link" href="index.html" aria-label="All profiles"><span aria-hidden="true">←</span><span class="visually-hidden">All profiles</span></a>
   <div class="hero-media">
-    <img class="photo" alt="Avicennia marina subsp. australasica mangroves in a temperate estuary"
-         src="https://commons.wikimedia.org/wiki/Special:FilePath/Avicennia%20marina%20Mangrove%20Paihia%201.JPG?width=1600"
-         onerror="this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Grey%20mangroves%20Avicennia%20marina%20at%20Umm%20Al%20Quwain%20Mangrove%20Park.jpg?width=1600'">
+    <picture>
+      <source type="image/webp" srcset="images/white-mangrove-hero-800.webp 800w, images/white-mangrove-hero.webp 1600w" sizes="100vw">
+      <img class="photo" alt="Avicennia marina subsp. australasica mangroves in a temperate estuary" src="images/white-mangrove-hero-800.jpg"
+           srcset="images/white-mangrove-hero-800.jpg 800w, images/white-mangrove-hero.jpg 1600w" sizes="100vw"
+           width="1600" height="1200" fetchpriority="high" decoding="async">
+    </picture>
   </div>
 </header>
 
 <main class="page-shell">
+  <section class="identity" aria-labelledby="avatar-name">
+    <p class="eyebrow">Ecological Overview</p>
+    <h1 class="avatar-name" id="avatar-name">White Mangrove</h1>
+    <p class="identity-note">Grey (or White) Mangroves around Melbourne<br><em>Avicennia marina subsp. australasica</em></p>
+  </section>
+
   <section class="soundscape" aria-labelledby="soundscape-title">
     <h2 id="soundscape-title">Listen to the habitat</h2>
     <p class="sound-intro">Hear a real shoreline and two named Australian coastal birds. The audio files are stored with this website and only play when you tap a button.</p>
@@ -161,16 +39,13 @@
       <button class="sound-btn" type="button" data-sound="gull" aria-pressed="false"><span class="sound-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 15c4-1 6-4 8-8 2 3 5 5 10 5-3 5-7 7-11 7-3 0-5-1-7-4Z"/><path d="m20 12 2-1M9 19v2M14 18v3"/></svg></span>Silver gull</button>
     </div>
     <p class="sound-status" id="sound-status" role="status" aria-live="polite">Choose a sound to begin.</p>
-    <p class="sound-credit">Recordings: earthcalling (public domain); Sue Tardif / iNaturalist (CC BY-NC); smathichong / iNaturalist (CC BY).</p>
+    <details class="sound-credit-details">
+      <summary>Recording credits</summary>
+      <p class="sound-credit">Recordings: earthcalling (public domain); Sue Tardif / iNaturalist (CC BY-NC); smathichong / iNaturalist (CC BY).</p>
+    </details>
   </section>
 
   <p class="hero-credit">Avicennia marina subsp. australasica — Victoria’s only mangrove. Representative photo: Wikimedia Commons (CC)</p>
-
-  <section class="identity" aria-labelledby="avatar-name">
-    <p class="eyebrow">Ecological Overview</p>
-    <h1 class="avatar-name" id="avatar-name">White Mangrove</h1>
-    <p class="identity-note">Grey (or White) Mangroves around Melbourne<br><em>Avicennia marina subsp. australasica</em></p>
-  </section>
 
   <section class="mood-card" data-mode="good" aria-labelledby="mood-title">
     <h2 id="mood-title">Today, through my eyes</h2>
@@ -281,6 +156,7 @@
     </ul>
   </div>
     </div>
+    <button class="science-close" type="button">Close science</button>
   </details>
 
   <nav class="topic-nav" aria-label="Ecology profiles">
@@ -358,6 +234,6 @@
     });
   }());
 </script>
-<script src="avatar-page.js?v=immersive1"></script>
+<script src="avatar-page.js?v=immersive2"></script>
 </body>
 </html>

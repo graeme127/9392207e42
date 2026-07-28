@@ -7,132 +7,29 @@
 <title>Birrarung / Yarra River at Warrandyte</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700;900&amp;display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#2a2015; --muted:#6a5a45; --line:#e7dcc7;
-    --bark:#96612e; --bark-dark:#4e3013; --river:#2f7581; --gum:#5f7d4f; --gold:#c58a24;
-    --paper:#faf6ec; --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--paper);color:var(--ink);
-    font-family:var(--serif);line-height:1.7;font-size:18px;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:880px;margin:0 auto;padding:0 24px 96px}
-  .topic-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:24px 0 12px;
-    font-family:var(--sans);font-size:.78rem}
-  .topic-nav a{color:var(--bark-dark);background:#fff;border:1px solid var(--line);border-radius:999px;
-    padding:7px 12px;text-decoration:none;box-shadow:0 3px 10px rgba(78,48,19,.05)}
-  .topic-nav a:hover{border-color:var(--bark);color:var(--river)}
-  .topic-nav a[aria-current="page"]{background:var(--bark-dark);border-color:var(--bark-dark);color:#fff}
-
-  header.hero{position:relative;color:#f7efe1;text-align:center;overflow:hidden;
-    min-height:560px;padding:0 20px 46px;
-    background:linear-gradient(160deg,#5e3a17,#9a6a34 55%,#2f7581);
-    display:flex;flex-direction:column;justify-content:flex-end}
-  .hero .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  .hero .overlay{position:absolute;inset:0;z-index:1;
-    background:linear-gradient(180deg,rgba(30,16,4,.36) 0%,rgba(30,16,4,.12) 40%,rgba(30,16,4,.74) 100%)}
-  .hero .htext{position:relative;z-index:2}
-  figure.photo-fig{margin:34px 0}
-  figure.photo-fig img{width:100%;height:auto;border-radius:18px;display:block;
-    box-shadow:0 10px 34px rgba(78,48,19,.16)}
-  .hero .tag{display:inline-block;font-family:var(--sans);font-size:.72rem;letter-spacing:3px;
-    text-transform:uppercase;font-weight:600;background:rgba(255,255,255,.16);backdrop-filter:blur(3px);
-    padding:7px 16px;border-radius:30px;border:1px solid rgba(255,255,255,.25)}
-  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5.6vw,3.2rem);
-    margin:.35em 0 .12em;line-height:1.12;letter-spacing:-.5px;text-shadow:0 2px 24px rgba(40,20,0,.4)}
-  .hero .sub{opacity:.95;font-size:1.15rem}
-
-  h2{font-family:var(--serif);font-weight:600;font-size:1.7rem;color:var(--bark-dark);
-    margin:2.6em 0 .4em;letter-spacing:-.3px;position:relative;padding-left:20px}
-  h2::before{content:"";position:absolute;left:0;top:.18em;bottom:.18em;width:5px;border-radius:4px;
-    background:linear-gradient(var(--bark),var(--river))}
-  h3{font-family:var(--sans);font-weight:600;color:var(--river);font-size:1.08rem;margin:1.6em 0 .2em}
-  p{margin:.75em 0}
-  .lead{font-size:1.28rem;line-height:1.6;color:var(--bark-dark);margin-top:2em}
-  .lead::first-letter{initial-letter:2;-webkit-initial-letter:2;font-weight:600;color:var(--bark);margin-right:10px}
-  strong{color:var(--bark-dark)}
-
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:16px;margin:34px 0}
-  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;
-    box-shadow:0 6px 20px rgba(78,48,19,.06);transition:transform .2s,box-shadow .2s;text-align:center}
-  .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(78,48,19,.13)}
-  .card .n{font-family:var(--serif);font-weight:700;color:var(--bark);font-size:1.55rem;line-height:1}
-  .card .l{font-family:var(--sans);font-size:.74rem;text-transform:uppercase;letter-spacing:1.2px;
-    color:var(--muted);margin-top:8px}
-
-  figure{margin:36px 0;text-align:center}
-  figure svg{width:100%;height:auto;border-radius:18px;box-shadow:0 10px 34px rgba(78,48,19,.13)}
-  figcaption{font-family:var(--sans);font-size:.86rem;color:var(--muted);margin:14px auto 0;max-width:620px}
-
-  .callout{position:relative;background:linear-gradient(135deg,#f5eddf,#efe4d1);
-    border:1px solid var(--line);border-left:5px solid var(--gold);padding:20px 24px;
-    border-radius:0 16px 16px 0;margin:30px 0;box-shadow:0 6px 18px rgba(78,48,19,.06)}
-  .callout .k{font-family:var(--sans);font-weight:700;color:var(--bark);text-transform:uppercase;
-    letter-spacing:1.5px;font-size:.72rem;display:block;margin-bottom:4px}
-
-  .soundscape{margin:34px 0;padding:26px;border-radius:20px;color:#fffaf1;
-    background:linear-gradient(135deg,var(--bark-dark),#76502c 52%,var(--river));
-    box-shadow:0 12px 30px rgba(78,48,19,.18)}
-  .soundscape h2{color:#fff;margin:0 0 6px;padding-left:0}
-  .soundscape h2::before{display:none}
-  .soundscape .sound-intro{margin:.25em 0 18px;color:#f0e9dc;
-    font-family:var(--sans);font-size:.88rem;line-height:1.55}
-  .sound-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-  .sound-btn{appearance:none;border:1px solid rgba(255,255,255,.34);border-radius:14px;
-    min-height:88px;padding:15px 10px;background:rgba(255,255,255,.1);color:#fff;cursor:pointer;
-    font-family:var(--sans);font-size:.86rem;font-weight:600;line-height:1.3;
-    touch-action:manipulation;-webkit-tap-highlight-color:transparent;
-    transition:transform .18s,background .18s,border-color .18s}
-  .sound-btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.18)}
-  .sound-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
-  .sound-btn[aria-pressed="true"]{background:#fff;color:var(--bark-dark);border-color:#fff}
-  .sound-icon{display:flex;align-items:center;justify-content:center;width:32px;height:32px;margin:0 auto 8px}
-  .sound-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;
-    stroke-linecap:round;stroke-linejoin:round}
-  .sound-status{min-height:1.4em;margin:14px 0 0!important;color:#f0e9dc;
-    font-family:var(--sans);font-size:.78rem!important;line-height:1.45}
-  .sound-credit{margin:8px 0 0!important;color:#e4dac8;font-family:var(--sans);
-    font-size:.68rem!important;line-height:1.5;opacity:.9}
-  @media(max-width:600px){.sound-buttons{grid-template-columns:1fr}.sound-btn{min-height:78px;padding:12px}}
-  @media(prefers-reduced-motion:reduce){.sound-btn{transition:none}.sound-btn:hover{transform:none}}
-
-  .wild{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;margin:22px 0}
-  .wild span{background:#fff;border:1px solid var(--line);border-radius:30px;padding:11px 14px;
-    text-align:center;font-family:var(--sans);font-size:.9rem;color:var(--bark-dark);font-weight:500;
-    box-shadow:0 4px 12px rgba(78,48,19,.05)}
-
-  table{width:100%;border-collapse:separate;border-spacing:0;margin:24px 0;font-size:.98rem;
-    background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
-    box-shadow:0 6px 20px rgba(78,48,19,.06)}
-  th,td{text-align:left;padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:top}
-  tr:last-child th,tr:last-child td{border-bottom:none}
-  th{width:34%;color:var(--bark-dark);font-family:var(--sans);font-weight:600;font-size:.82rem;
-    text-transform:uppercase;letter-spacing:.5px;background:#f6efe3}
-
-  .sources{font-family:var(--sans);font-size:.86rem;background:#f2ebdd;border-radius:16px;
-    padding:22px 26px;margin-top:52px;border:1px solid var(--line)}
-  .sources strong{font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--bark-dark)}
-  .sources ul{list-style:none;padding:0;margin:12px 0 0}
-  .sources a{color:var(--river);text-decoration:none;word-break:break-word}
-  .sources a:hover{text-decoration:underline}
-  .sources li{margin:.5em 0;padding-left:16px;position:relative}
-  .sources li::before{content:"›";position:absolute;left:0;color:var(--bark)}
-</style>
-<link href="avatar-pages.css?v=immersive3" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700;900&amp;display=swap" rel="stylesheet">
+<link href="avatar-pages.css?v=immersive4" rel="stylesheet">
 </head>
 <body class="page-river">
 <header class="hero">
+  <a class="top-home-link" href="index.html" aria-label="All profiles"><span aria-hidden="true">←</span><span class="visually-hidden">All profiles</span></a>
   <div class="hero-media">
-    <img class="photo" alt="Pound Bend Tunnel on the Yarra River at Warrandyte"
-         src="https://commons.wikimedia.org/wiki/Special:FilePath/Pound%20Bend%20tunnel.JPG?width=1500"
-         onerror="this.style.display='none'">
+    <picture>
+      <source type="image/webp" srcset="images/pound-bend-hero-800.webp 800w, images/pound-bend-hero.webp 1600w" sizes="100vw">
+      <img class="photo" alt="Pound Bend Tunnel on the Yarra River at Warrandyte" src="images/pound-bend-hero-800.jpg"
+           srcset="images/pound-bend-hero-800.jpg 800w, images/pound-bend-hero.jpg 1600w" sizes="100vw"
+           width="1600" height="1200" fetchpriority="high" decoding="async">
+    </picture>
   </div>
 </header>
 
 <main class="page-shell">
+  <section class="identity" aria-labelledby="avatar-name">
+    <p class="eyebrow">Place Overview</p>
+    <h1 class="avatar-name" id="avatar-name">Pound Bend / Birrarung</h1>
+    <p class="identity-note"><span>Birrarung / Yarra River</span><br><span>at Warrandyte</span><br>Wurundjeri Woi-wurrung Country · Victoria</p>
+  </section>
+
   <section class="soundscape" aria-labelledby="soundscape-title">
     <h2 id="soundscape-title">Listen to the river corridor</h2>
     <p class="sound-intro">Hear three different field recordings: flowing water and two familiar Australian birds. The audio files are stored with this website and only play when you tap.</p>
@@ -142,14 +39,13 @@
       <button class="sound-btn" type="button" data-sound="magpie" aria-pressed="false"><span class="sound-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16c2-5 5-8 10-8 3 0 5 1 7 3-3 1-5 3-7 6-4 2-7 2-10-1Z"/><path d="m20 11 2-1M9 18v3M14 17v4"/><path d="M5 21h13"/></svg></span>Australian magpie</button>
     </div>
     <p class="sound-status" id="sound-status" role="status" aria-live="polite">Choose a sound to begin.</p>
-    <p class="sound-credit">Recordings: Fg2 (public domain); Kuco (public domain); skyflower2 / iNaturalist (CC BY-NC).</p>
+    <details class="sound-credit-details">
+      <summary>Recording credits</summary>
+      <p class="sound-credit">Recordings: Fg2 (public domain); Kuco (public domain); skyflower2 / iNaturalist (CC BY-NC).</p>
+    </details>
   </section>
 
-  <section class="identity" aria-labelledby="avatar-name">
-    <p class="eyebrow">Place Overview</p>
-    <h1 class="avatar-name" id="avatar-name">Pound Bend / Birrarung</h1>
-    <p class="identity-note"><span>Birrarung / Yarra River</span><br><span>at Warrandyte</span><br>Wurundjeri Woi-wurrung Country · Victoria</p>
-  </section>
+  <p class="hero-credit">Pound Bend Tunnel at Warrandyte. Representative photo: Wikimedia Commons.</p>
 
   <section class="mood-card" data-mode="good" aria-labelledby="mood-title">
     <h2 id="mood-title">Today, through my eyes</h2>
@@ -306,6 +202,7 @@
     </ul>
   </div>
     </div>
+    <button class="science-close" type="button">Close science</button>
   </details>
 
   <nav class="topic-nav" aria-label="Ecology profiles">
@@ -383,6 +280,6 @@
     });
   }());
 </script>
-<script src="avatar-page.js?v=immersive1"></script>
+<script src="avatar-page.js?v=immersive2"></script>
 </body>
 </html>

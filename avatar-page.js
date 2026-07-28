@@ -41,6 +41,19 @@
     });
   });
 
+  document.querySelectorAll('.science-close').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var details = button.closest('details');
+      if (!details) return;
+      var summary = details.querySelector('summary');
+      details.removeAttribute('open');
+      if (summary) {
+        summary.focus({preventScroll:true});
+        summary.scrollIntoView({behavior:reduceMotion ? 'auto' : 'smooth', block:'center'});
+      }
+    });
+  });
+
   var shareButton = document.querySelector('.share-button');
   var shareStatus = document.querySelector('.share-status');
   if (shareButton) {
